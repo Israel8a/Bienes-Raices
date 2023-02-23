@@ -1,0 +1,68 @@
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet{
+        align-items: flex-end;
+        margin-top: 0;
+    }
+    .dark-mode-boton{
+        width: 3rem;
+        filter: invert(100%);
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.barra{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+.navegacion{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear,height 0.5s linear;
+    height: 0;
+    @include tablet{ 
+        display: flex;
+        align-items: center;
+        visibility: visible;
+        opacity: 1;
+    }
+    a{
+        color: $blanco;
+        display: block;
+        text-align: center;
+        text-decoration: none; 
+        font-size: 2.2rem;
+        @include tablet{
+            margin-right: 2rem;
+            font-size:1.8rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+    }
+}
+.img-amburguesa{
+    @include tablet{
+        display: none;
+    }
+    img{
+        width: 5rem;
+    }
+}
+.mostrar{
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
